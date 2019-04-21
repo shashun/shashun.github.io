@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>顺子的博客 | 专注于PHP、Go语言(golang)、项目管理、软件架构</title>
+    <meta property="og:title" content="顺子的博客 | 专注于PHP、Go语言(golang)、项目管理、软件架构">
+    <meta property="og:type" content="website">
+    <meta name="Keywords" content="golang,go语言,go语言笔记,博客,项目管理,软件架构,公众号,小程序">
+    <meta name="description" content="专注于IT互联网，包括但不限于Go语言(golang)、PHP、Python、项目管理、软件架构等">
+    <meta property="og:url" content="http://www.shashun.site/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="alternate" type="application/rss+xml+xml" href="http://www.shashun.site/index.xml" title="顺子的博客" />
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <h1>
+                        <a id="logo" href="http://www.shashun.site/">
+                            顺子的博客
+                        </a>
+                    </h1>
+                
+                <p class="description">专注于PHP、Go语言(golang)、项目管理、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://www.shashun.site/">首页</a>
+                    
+                    <a  href="http://www.shashun.site/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://www.shashun.site/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://www.shashun.site/post/asynchronous/" title="异步、并发、协程原理" >异步、并发、协程原理</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年4月17日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://www.shashun.site/categories/%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA">基础理论</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Linux 操作系统在设计上将虚拟空间划分为用户空间和内核空间，两者做了隔离是相互独立的，用户空间给应用程序使用，内核空间给内核使用。
+一、异步 应用程序和内核 内核具有最高权限，可以访问受保护的内存空间，可以访问底层的硬件设备。而这些是应用程序所不具备的，但应用程序可以通过调用内核提供的接口来间接访问或操作。所谓的常见的 IO 模型就是基于应用程序和内核之间的交互所提出来的。以一次网络 IO 请求过程中的 read 操作为例，请求数据会先拷贝到系统内核的缓冲区（内核空间），再从操作系统的内核缓冲区拷贝到应用程序的地址空间（用户空间）。而从内核空间将数据拷贝到用户空间过程中，就会经历两个阶段：
+ 等待数据准备 拷贝数据   也正因为有了这两个阶段，才提出了各种网络 I/O 模型。
+Unix/Linux的体系架构 同步和异步 同步（Synchronised）和异步（Asynchronized）的概念描述的是应用程序与内核的交互方式，同步是指应用程序发起 I/O 请求后需要等待或者轮询内核 I/O 操作完成后才能继续执行；而异步是指应用程序发起 I/O 请求后仍继续执行，当内核 I/O 操作完成后会通知应用程序，或者调用应用程序注册的回调函数。……
+                            </div>
+                            <p class="readmore"><a href="http://www.shashun.site/post/asynchronous/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://www.shashun.site/post/first/" title="把 Hugo 博客部署到自己的服务器" >把 Hugo 博客部署到自己的服务器</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年3月17日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://www.shashun.site/categories/hugo">Hugo</a></span>
+                                
+                                <span class="meta-category"><a href="http://www.shashun.site/categories/git">Git</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                安装Hugo 参考链接：
+ Hugo中文文档   二进制安装（推荐：简单、快速）
+Mac下直接使用 Homebrew 安装：
+brew install hugo
+ 源码安装 源码编译安装，首先安装好依赖的工具：
+ Git Go (at least Go 1.11)   设置好 GOPATH 环境变量，获取源码并编译：
+$ export GOPATH=$HOME/go $ go get -v -u github.……
+                            </div>
+                            <p class="readmore"><a href="http://www.shashun.site/post/first/">阅读全文</a></p>
+                        </article>
+                    
+
+                    
+
+
+
+
+                </div>
+            </div>
+
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://www.shashun.site/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://www.shashun.site/post/asynchronous/" title="异步、并发、协程原理">异步、并发、协程原理</a>
+    </li>
+    
+    <li>
+        <a href="http://www.shashun.site/post/first/" title="把 Hugo 博客部署到自己的服务器">把 Hugo 博客部署到自己的服务器</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://www.shashun.site/categories/git/">Git(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://www.shashun.site/categories/hugo/">Hugo(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://www.shashun.site/categories/%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/">基础理论(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://www.shashun.site/tags/%E5%8D%8F%E7%A8%8B/">协程</a>
+    
+    <a href="http://www.shashun.site/tags/%E5%90%8C%E6%AD%A5/">同步</a>
+    
+    <a href="http://www.shashun.site/tags/%E5%B9%B6%E5%8F%91/">并发</a>
+    
+    <a href="http://www.shashun.site/tags/%E5%B9%B6%E8%A1%8C/">并行</a>
+    
+    <a href="http://www.shashun.site/tags/%E5%BC%82%E6%AD%A5/">异步</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://www.shashun.site/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="http://www.shashun.site/">顺子的博客 By 沙顺</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 顺子的博客</title>
+    <link>http://www.shashun.site/categories/</link>
+    <description>Recent content in Categories on 顺子的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	<atom:link href="http://www.shashun.site/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git</title>
+      <link>http://www.shashun.site/categories/git/</link>
+      <pubDate>Sun, 17 Mar 2019 22:59:37 +0800</pubDate>
+      
+      <guid>http://www.shashun.site/categories/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://www.shashun.site/categories/hugo/</link>
+      <pubDate>Sun, 17 Mar 2019 22:59:37 +0800</pubDate>
+      
+      <guid>http://www.shashun.site/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>基础理论</title>
+      <link>http://www.shashun.site/categories/%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/</link>
+      <pubDate>Wed, 17 Apr 2019 19:05:48 +0800</pubDate>
+      
+      <guid>http://www.shashun.site/categories/%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

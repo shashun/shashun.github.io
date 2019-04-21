@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>基础理论 on 顺子的博客</title>
+    <link>http://www.shashun.site/categories/%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/</link>
+    <description>Recent content in 基础理论 on 顺子的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 17 Apr 2019 19:05:48 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.shashun.site/categories/%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>异步、并发、协程原理</title>
+      <link>http://www.shashun.site/post/asynchronous/</link>
+      <pubDate>Wed, 17 Apr 2019 19:05:48 +0800</pubDate>
+      
+      <guid>http://www.shashun.site/post/asynchronous/</guid>
+      <description>Linux 操作系统在设计上将虚拟空间划分为用户空间和内核空间，两者做了隔离是相互独立的，用户空间给应用程序使用，内核空间给内核使用。
+一、异步 应用程序和内核 内核具有最高权限，可以访问受保护的内存空间，可以访问底层的硬件设备。而这些是应用程序所不具备的，但应用程序可以通过调用内核提供的接口来间接访问或操作。所谓的常见的 IO 模型就是基于应用程序和内核之间的交互所提出来的。以一次网络 IO 请求过程中的 read 操作为例，请求数据会先拷贝到系统内核的缓冲区（内核空间），再从操作系统的内核缓冲区拷贝到应用程序的地址空间（用户空间）。而从内核空间将数据拷贝到用户空间过程中，就会经历两个阶段：
+ 等待数据准备 拷贝数据   也正因为有了这两个阶段，才提出了各种网络 I/O 模型。
+Unix/Linux的体系架构 同步和异步 同步（Synchronised）和异步（Asynchronized）的概念描述的是应用程序与内核的交互方式，同步是指应用程序发起 I/O 请求后需要等待或者轮询内核 I/O 操作完成后才能继续执行；而异步是指应用程序发起 I/O 请求后仍继续执行，当内核 I/O 操作完成后会通知应用程序，或者调用应用程序注册的回调函数。</description>
+    </item>
+    
+  </channel>
+</rss>
