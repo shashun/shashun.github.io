@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>把 Hugo 博客部署到自己的服务器 | 顺子的博客</title>
-    <meta property="og:title" content="把 Hugo 博客部署到自己的服务器 - 顺子的博客">
+    <title>把 Hugo 博客部署到VPS | 顺子的博客</title>
+    <meta property="og:title" content="把 Hugo 博客部署到VPS - 顺子的博客">
     <meta property="og:type" content="article">
         
     <meta property="article:published_time" content="2019-03-17T22:59:37&#43;08:00">
@@ -17,7 +17,7 @@
     <meta property="article:modified_time" content="2019-03-17T22:59:37&#43;08:00">
         
     <meta name="Keywords" content="golang,go语言,go语言笔记,博客,项目管理,软件架构,公众号,小程序">
-    <meta name="description" content="把 Hugo 博客部署到自己的服务器">
+    <meta name="description" content="把 Hugo 博客部署到VPS">
         
     <meta name="author" content="沙顺">
     <meta property="og:url" content="http://www.shashun.site/post/first/">
@@ -72,7 +72,7 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">把 Hugo 博客部署到自己的服务器</h1>
+                            <h1 class="post-title">把 Hugo 博客部署到VPS</h1>
                         </header>
                         <date class="post-meta meta-date">
                             2019年3月17日
@@ -82,8 +82,6 @@
                             <span>|</span>
                             
                                 <span class="meta-category"><a href="http://www.shashun.site/categories/hugo">Hugo</a></span>
-                            
-                                <span class="meta-category"><a href="http://www.shashun.site/categories/git">Git</a></span>
                             
                         </div>
                         
@@ -197,7 +195,7 @@ $ go get -v -u github.com/spf13/hugo
 
 <p>在你的站点根目录执行 Hugo 命令进行调试：</p>
 
-<pre><code>$ hugo server --theme=hyde --buildDrafts
+<pre><code>$ hugo server --theme=maupassant --buildDrafts
 </code></pre>
 
 <p>（注明：v0.15 版本之后，不再需要使用 &ndash;watch 参数了）</p>
@@ -258,26 +256,29 @@ chown -R git:git /home/git/repos/blog.git // 添加权限
 <p>如果能把空仓库拉下来，就说明 git 仓库搭建成功了</p>
 
 <ol>
-<li>建立ssh信任关系，在本地电脑，执行如下命令
-<code>shell   
-ssh-copy-id -i ~/.ssh/id_rsa.pub git@server_ip
-ssh git@server_ip // 测试能否登录
-</code></li>
-<li>如果第 6 步能成功，为了安全起见禁用git用户的 shell 登录权限，从而只能用git clone,git push等登录，执行如下命令
-<code>shell   
-cat /etc/shells // 查看`git-shell`是否在登录方式里面，有则跳过
-which git-shell // 查看是否安装
-vi /etc/shells
-#添加上2步显示出来的路劲，通常在 /usr/bin/git-shell
-</code>
-修改/etc/passwd中的权限，将原来的
-<code>
-`git:x:1000:1000::/home/git:/bin/bash`
-</code>
-修改为
-<code>
-git:x:1000:1000:,,,:/home/git:/usr/bin/git-shell
-</code></li>
+<li><p>建立ssh信任关系，在本地电脑，执行如下命令</p>
+
+<pre><code class="language-shell">    ssh-copy-id -i ~/.ssh/id_rsa.pub git@server_ip
+    ssh git@server_ip // 测试能否登录
+</code></pre></li>
+
+<li><p>如果第 6 步能成功，为了安全起见禁用git用户的 shell 登录权限，从而只能用git clone,git push等登录，执行如下命令</p>
+
+<pre><code class="language-shell">    cat /etc/shells // 查看`git-shell`是否在登录方式里面，有则跳过
+    which git-shell // 查看是否安装
+    vi /etc/shells
+    #添加上2步显示出来的路劲，通常在 /usr/bin/git-shell
+</code></pre>
+
+<p>修改/etc/passwd中的权限，将原来的</p>
+
+<pre><code class="language-vim">    `git:x:1000:1000::/home/git:/bin/bash`
+</code></pre>
+
+<p>修改为</p>
+
+<pre><code class="language-vim">    git:x:1000:1000:,,,:/home/git:/usr/bin/git-shell
+</code></pre></li>
 </ol>
 
 <h3 id="搭建nginx服务器">搭建nginx服务器</h3>
@@ -322,18 +323,18 @@ nginx -s reload
 
 <p>在站点根目录执行 Hugo 命令生成最终页面：</p>
 
-<pre><code>$ hugo --theme=hyde --baseUrl=&quot;http://coderzh.github.io/&quot;
-（注意，以上命令并不会生成草稿页面，如果未生成任何文章，请去掉文章头部的 draft=true 再重新生成。）
+<pre><code class="language-shell">    $ hugo --theme=maupassant --baseUrl=&quot;http://shashun.site&quot;
+    （注意，以上命令并不会生成草稿页面，如果未生成任何文章，请去掉文章头部的 draft=true 再重新生成。）
 </code></pre>
 
 <p>如果一切顺利，所有静态页面都会生成到 public 目录，将pubilc目录里所有文件 push 到刚创建的Repository的 master 分支。</p>
 
-<pre><code>$ cd public
-$ git init
-$ git remote add origin git git@server_ip:/home/git/repos/blog.git
-$ git add -A
-$ git commit -m &quot;first commit1&quot;
-$ git push -u origin master
+<pre><code class="language-shell">    $ cd public
+    $ git init
+    $ git remote add origin git git@server_ip:/home/git/repos/blog.git
+    $ git add -A
+    $ git commit -m &quot;first commit1&quot;
+    $ git push -u origin master
 </code></pre>
 
                         </div>
@@ -383,11 +384,39 @@ $ git push -u origin master
 <ul class="widget-list">
     
     <li>
-        <a href="http://www.shashun.site/post/asynchronous/" title="异步、并发、协程原理">异步、并发、协程原理</a>
+        <a href="http://www.shashun.site/post/linux_command_sed/" title="Linux的常用命令--sed入门">Linux的常用命令--sed入门</a>
     </li>
     
     <li>
-        <a href="http://www.shashun.site/post/first/" title="把 Hugo 博客部署到自己的服务器">把 Hugo 博客部署到自己的服务器</a>
+        <a href="http://www.shashun.site/post/linux_command_awk/" title="Linux的常用命令--awk入门">Linux的常用命令--awk入门</a>
+    </li>
+    
+    <li>
+        <a href="http://www.shashun.site/post/linux_command_three/" title="Linux的常用命令--进程管理">Linux的常用命令--进程管理</a>
+    </li>
+    
+    <li>
+        <a href="http://www.shashun.site/post/linux_command_two/" title="Linux的常用命令--字符处理、例行任务和网络管理与测试">Linux的常用命令--字符处理、例行任务和网络管理与测试</a>
+    </li>
+    
+    <li>
+        <a href="http://www.shashun.site/post/linux_command/" title="Linux的常用命令--账号管理和文件管理">Linux的常用命令--账号管理和文件管理</a>
+    </li>
+    
+    <li>
+        <a href="http://www.shashun.site/post/composer_lock/" title="Composer.lock的作用">Composer.lock的作用</a>
+    </li>
+    
+    <li>
+        <a href="http://www.shashun.site/post/composer_two/" title="Composer的常用命令">Composer的常用命令</a>
+    </li>
+    
+    <li>
+        <a href="http://www.shashun.site/post/composer/" title="Composer的安装和使用镜像加速">Composer的安装和使用镜像加速</a>
+    </li>
+    
+    <li>
+        <a href="http://www.shashun.site/post/first/" title="把 Hugo 博客部署到VPS">把 Hugo 博客部署到VPS</a>
     </li>
     
 </ul>
@@ -400,15 +429,15 @@ $ git push -u origin master
 <ul class="widget-list">
     
     <li>
-        <a href="http://www.shashun.site/categories/git/">Git(1)</a>
-    </li>
-    
-    <li>
         <a href="http://www.shashun.site/categories/hugo/">Hugo(1)</a>
     </li>
     
     <li>
-        <a href="http://www.shashun.site/categories/%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/">基础理论(1)</a>
+        <a href="http://www.shashun.site/categories/linux/">Linux(5)</a>
+    </li>
+    
+    <li>
+        <a href="http://www.shashun.site/categories/php/">PHP(3)</a>
     </li>
     
 </ul>
@@ -418,15 +447,7 @@ $ git push -u origin master
         <h3 class="widget-title">标签</h3>
 <div class="tagcloud">
     
-    <a href="http://www.shashun.site/tags/%E5%8D%8F%E7%A8%8B/">协程</a>
-    
-    <a href="http://www.shashun.site/tags/%E5%90%8C%E6%AD%A5/">同步</a>
-    
-    <a href="http://www.shashun.site/tags/%E5%B9%B6%E5%8F%91/">并发</a>
-    
-    <a href="http://www.shashun.site/tags/%E5%B9%B6%E8%A1%8C/">并行</a>
-    
-    <a href="http://www.shashun.site/tags/%E5%BC%82%E6%AD%A5/">异步</a>
+    <a href="http://www.shashun.site/tags/composer/">Composer</a>
     
 </div>
     </section>

@@ -7,22 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Hugo | 顺子的博客</title>
-    <meta property="og:title" content="Hugo - 顺子的博客">
+    <title>PHP | 顺子的博客</title>
+    <meta property="og:title" content="PHP - 顺子的博客">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="golang,go语言,go语言笔记,博客,项目管理,软件架构,公众号,小程序">
-    <meta name="description" content="Hugo">
+    <meta name="description" content="PHP">
         
     <meta name="author" content="沙顺">
-    <meta property="og:url" content="http://www.shashun.site/categories/hugo/">
+    <meta property="og:url" content="http://www.shashun.site/categories/php/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
     
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="http://www.shashun.site/categories/hugo/index.xml" title="顺子的博客" />
+    <link rel="alternate" type="application/rss+xml+xml" href="http://www.shashun.site/categories/php/index.xml" title="顺子的博客" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
@@ -69,7 +69,7 @@
                     
                     <h3 class="archive-title">
                         分类
-                        <span class="keyword">Hugo</span>
+                        <span class="keyword">PHP</span>
                         中的文章
                     </h3>
                     
@@ -78,25 +78,71 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
-                                    <a href="http://www.shashun.site/post/first/">把 Hugo 博客部署到VPS</a>
+                                    <a href="http://www.shashun.site/post/composer_lock/">Composer.lock的作用</a>
                                 </h1>
                             </header>
                             <date class="post-meta meta-date">
-                                2019年3月17日
+                                2019年4月27日
                             </date>
                             
                             <div class="post-meta meta-category">
                                 |
                                 
-                                    <a href="http://www.shashun.site/categories/hugo">Hugo</a>
+                                    <a href="http://www.shashun.site/categories/php">PHP</a>
                                 
                             </div>
                             
                             <div class="post-content">
-                                安装Hugo 参考链接：
- Hugo中文文档   二进制安装（推荐：简单、快速）
-Mac下直接使用 Homebrew 安装：……
-                                <p class="readmore"><a href="http://www.shashun.site/post/first/">阅读全文</a></p>
+                                作用 运行composer install 的时候composer将会去读取composer.lock文件，如果composer.lock不存在或者没有内容，那么在执行时读取composer.json，获取依赖的包,并将最新版本的文件下载到vendor目录中,同时更新composer.lock文件，否则将根据composer.lock去下载更新所有依赖
+建议 在用git部署项目的时候建议composer.lock提交包git上，原因是它会导致任何设置项目的人都使用完全相同的依赖项，即使单独开发，在重新安装项目六个月后，即使项目的依赖关系从那以后发布了许多新版本，也可以确信已安装的依赖项仍然可以工作。也就是说将composer.lock提交到git上可以在不同机器上部署这个项目所安装的依赖是完全相同的，因为都是根据composer.lock文件去更新。
+注意 composer.lock文件会阻止自动获取最新版本的依赖项，如要更新到最新版，请使用composer update命令……
+                                <p class="readmore"><a href="http://www.shashun.site/post/composer_lock/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://www.shashun.site/post/composer_two/">Composer的常用命令</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年4月27日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="http://www.shashun.site/categories/php">PHP</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                init（初始化） 该命令用于创建 composer.json 文件，并进行基础信息配置 可以配置Package name、Description、Author、Minimum、Package Type、License、dependencies 及 dev dependencies 信息。……
+                                <p class="readmore"><a href="http://www.shashun.site/post/composer_two/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://www.shashun.site/post/composer/">Composer的安装和使用镜像加速</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年4月26日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="http://www.shashun.site/categories/php">PHP</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                一、 安装 在Windows下安装 1，下载 composer-Setup.exe 2. 运行composer-Setup.exe，点next，选择php.exe的安装路径，安装 3. 打开cmd,直接输入composer:如下表示安装成功 在Linux/Mac下安装 php -r &quot;copy('https://getcomposer.……
+                                <p class="readmore"><a href="http://www.shashun.site/post/composer/">阅读全文</a></p>
                             </div>
                         </article>
                     

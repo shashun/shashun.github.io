@@ -6,36 +6,100 @@
     <description>Recent content in Posts on 顺子的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 17 Apr 2019 19:05:48 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 28 Apr 2019 09:28:39 +0800</lastBuildDate>
     
 	<atom:link href="http://www.shashun.site/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>异步、并发、协程原理</title>
-      <link>http://www.shashun.site/post/asynchronous/</link>
-      <pubDate>Wed, 17 Apr 2019 19:05:48 +0800</pubDate>
+      <title>Linux的常用命令--sed入门</title>
+      <link>http://www.shashun.site/post/linux_command_sed/</link>
+      <pubDate>Sun, 28 Apr 2019 09:28:39 +0800</pubDate>
       
-      <guid>http://www.shashun.site/post/asynchronous/</guid>
-      <description>Linux 操作系统在设计上将虚拟空间划分为用户空间和内核空间，两者做了隔离是相互独立的，用户空间给应用程序使用，内核空间给内核使用。
-一、异步 应用程序和内核 内核具有最高权限，可以访问受保护的内存空间，可以访问底层的硬件设备。而这些是应用程序所不具备的，但应用程序可以通过调用内核提供的接口来间接访问或操作。所谓的常见的 IO 模型就是基于应用程序和内核之间的交互所提出来的。以一次网络 IO 请求过程中的 read 操作为例，请求数据会先拷贝到系统内核的缓冲区（内核空间），再从操作系统的内核缓冲区拷贝到应用程序的地址空间（用户空间）。而从内核空间将数据拷贝到用户空间过程中，就会经历两个阶段：
- 等待数据准备 拷贝数据   也正因为有了这两个阶段，才提出了各种网络 I/O 模型。
-Unix/Linux的体系架构 同步和异步 同步（Synchronised）和异步（Asynchronized）的概念描述的是应用程序与内核的交互方式，同步是指应用程序发起 I/O 请求后需要等待或者轮询内核 I/O 操作完成后才能继续执行；而异步是指应用程序发起 I/O 请求后仍继续执行，当内核 I/O 操作完成后会通知应用程序，或者调用应用程序注册的回调函数。</description>
+      <guid>http://www.shashun.site/post/linux_command_sed/</guid>
+      <description>sed命令简介 sed全名叫stream editor，是一种流编辑器，按行来处理文本的内容 ，配合正则表达式来使用，批量修改内容会很方便
+sed命令的选项 sed [选项] [动作]
+选项的参数：</description>
     </item>
     
     <item>
-      <title>把 Hugo 博客部署到自己的服务器</title>
+      <title>Linux的常用命令--awk入门</title>
+      <link>http://www.shashun.site/post/linux_command_awk/</link>
+      <pubDate>Sun, 28 Apr 2019 09:28:32 +0800</pubDate>
+      
+      <guid>http://www.shashun.site/post/linux_command_awk/</guid>
+      <description>awk基于列的文本处理工具，它的工作方式是按行读取文本并视为一条记录，每条记录以字段分割成若干字段，然后输出各字段的值。它不仅仅是工具软件，还是一种编程语言
+基本用法 # 格式 awk 动作 文件名 #打印指定域 awk &#39;{print $1, $4}&#39; demo.</description>
+    </item>
+    
+    <item>
+      <title>Linux的常用命令--进程管理</title>
+      <link>http://www.shashun.site/post/linux_command_three/</link>
+      <pubDate>Sat, 27 Apr 2019 22:29:49 +0800</pubDate>
+      
+      <guid>http://www.shashun.site/post/linux_command_three/</guid>
+      <description>进程管理 ps命令 查看当前查询状态下进程瞬间的状态信息
+ps 参数 #ps常用参数: # -A 列出所有的进程，和-e有同样的效果 # -a 列出不和本终端有关的所有进程 # -w 显示加宽可以显示较多信息 # -u 显示有效使用者相关的进程 # aux 显示所有包含其他使用者的进程#使用aux参数的输出： # USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND #USER: 进程拥有者 #PID: pid #%CPU: 占用的CPU使用率 #%MEM: 占用的内存使用率 #VSZ: 占用的虚拟内存大小 #RSS: 占用的内存大小 #TTY: 运行的终端的号码 #STAT: 进程状态: #D: 不可中断 #R: 运行中 #S: 休眠 #T: 暂停 #Z: 僵尸进程 #W: 没有足够的内存可分配 #&amp;lt;: 高优先级的行程 #N: 低优先级的行程 #START: 进程开始时间 #TIME: 累计使用CPU的时间 #COMMAND:执行的命令  top命令 及时动态地查看进程的信息 第一行： top命令刷新时间、系统已启动时间、当前登录用户数、系统负载（1分钟，5分钟，15分钟的平均负载）</description>
+    </item>
+    
+    <item>
+      <title>Linux的常用命令--字符处理、例行任务和网络管理与测试</title>
+      <link>http://www.shashun.site/post/linux_command_two/</link>
+      <pubDate>Sat, 27 Apr 2019 21:23:59 +0800</pubDate>
+      
+      <guid>http://www.shashun.site/post/linux_command_two/</guid>
+      <description>字符处理 搜索文本:grep
+grep [-ivnc] &#39;需要匹配的字符&#39; 文件名 #-i不区分大小写 #-c统计包含匹配的行数 #-n输出行号 #-v反向匹配 grep -i &#39;name&#39; .</description>
+    </item>
+    
+    <item>
+      <title>Linux的常用命令--账号管理和文件管理</title>
+      <link>http://www.shashun.site/post/linux_command/</link>
+      <pubDate>Sat, 27 Apr 2019 18:23:43 +0800</pubDate>
+      
+      <guid>http://www.shashun.site/post/linux_command/</guid>
+      <description>1.账号管理 新增用户： useradd
+$ useradd demo $ useradd -g demo demo #指定用户组  修改密码：passwd</description>
+    </item>
+    
+    <item>
+      <title>Composer.lock的作用</title>
+      <link>http://www.shashun.site/post/composer_lock/</link>
+      <pubDate>Sat, 27 Apr 2019 18:07:37 +0800</pubDate>
+      
+      <guid>http://www.shashun.site/post/composer_lock/</guid>
+      <description>作用 运行composer install 的时候composer将会去读取composer.lock文件，如果composer.lock不存在或者没有内容，那么在执行时读取composer.json，获取依赖的包,并将最新版本的文件下载到vendor目录中,同时更新composer.lock文件，否则将根据composer.lock去下载更新所有依赖
+建议 在用git部署项目的时候建议composer.lock提交包git上，原因是它会导致任何设置项目的人都使用完全相同的依赖项，即使单独开发，在重新安装项目六个月后，即使项目的依赖关系从那以后发布了许多新版本，也可以确信已安装的依赖项仍然可以工作。也就是说将composer.lock提交到git上可以在不同机器上部署这个项目所安装的依赖是完全相同的，因为都是根据composer.lock文件去更新。
+注意 composer.lock文件会阻止自动获取最新版本的依赖项，如要更新到最新版，请使用composer update命令</description>
+    </item>
+    
+    <item>
+      <title>Composer的常用命令</title>
+      <link>http://www.shashun.site/post/composer_two/</link>
+      <pubDate>Sat, 27 Apr 2019 17:30:40 +0800</pubDate>
+      
+      <guid>http://www.shashun.site/post/composer_two/</guid>
+      <description>init（初始化） 该命令用于创建 composer.json 文件，并进行基础信息配置 可以配置Package name、Description、Author、Minimum、Package Type、License、dependencies 及 dev dependencies 信息。</description>
+    </item>
+    
+    <item>
+      <title>Composer的安装和使用镜像加速</title>
+      <link>http://www.shashun.site/post/composer/</link>
+      <pubDate>Fri, 26 Apr 2019 14:05:48 +0800</pubDate>
+      
+      <guid>http://www.shashun.site/post/composer/</guid>
+      <description>一、 安装 在Windows下安装 1，下载 composer-Setup.exe 2. 运行composer-Setup.exe，点next，选择php.exe的安装路径，安装 3. 打开cmd,直接输入composer:如下表示安装成功 在Linux/Mac下安装 php -r &amp;quot;copy(&#39;https://getcomposer.</description>
+    </item>
+    
+    <item>
+      <title>把 Hugo 博客部署到VPS</title>
       <link>http://www.shashun.site/post/first/</link>
       <pubDate>Sun, 17 Mar 2019 22:59:37 +0800</pubDate>
       
       <guid>http://www.shashun.site/post/first/</guid>
       <description>安装Hugo 参考链接：
  Hugo中文文档   二进制安装（推荐：简单、快速）
-Mac下直接使用 Homebrew 安装：
-brew install hugo
- 源码安装 源码编译安装，首先安装好依赖的工具：
- Git Go (at least Go 1.11)   设置好 GOPATH 环境变量，获取源码并编译：
-$ export GOPATH=$HOME/go $ go get -v -u github.</description>
+Mac下直接使用 Homebrew 安装：</description>
     </item>
     
   </channel>

@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>About | 顺子的博客</title>
-    <meta property="og:title" content="About - 顺子的博客">
+    <title>Linux的常用命令--字符处理、例行任务和网络管理与测试 | 顺子的博客</title>
+    <meta property="og:title" content="Linux的常用命令--字符处理、例行任务和网络管理与测试 - 顺子的博客">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-03-17T22:49:10&#43;08:00">
+    <meta property="article:published_time" content="2019-04-27T21:23:59&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-03-17T22:49:10&#43;08:00">
+    <meta property="article:modified_time" content="2019-04-27T21:23:59&#43;08:00">
         
     <meta name="Keywords" content="golang,go语言,go语言笔记,博客,项目管理,软件架构,公众号,小程序">
-    <meta name="description" content="About">
+    <meta name="description" content="Linux的常用命令--字符处理、例行任务和网络管理与测试">
         
     <meta name="author" content="沙顺">
-    <meta property="og:url" content="http://www.shashun.site/about/">
+    <meta property="og:url" content="http://www.shashun.site/post/linux_command_two/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -51,11 +51,11 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="http://www.shashun.site/">首页</a>
+                    <a class="current" href="http://www.shashun.site/">首页</a>
                     
                     <a  href="http://www.shashun.site/archives/" title="归档">归档</a>
                     
-                    <a class="current" href="http://www.shashun.site/about/" title="关于">关于</a>
+                    <a  href="http://www.shashun.site/about/" title="关于">关于</a>
                     
                 </nav>
             </div>
@@ -72,15 +72,197 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">About</h1>
+                            <h1 class="post-title">Linux的常用命令--字符处理、例行任务和网络管理与测试</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年3月17日
+                            2019年4月27日
                         </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="http://www.shashun.site/categories/linux">Linux</a></span>
+                            
+                        </div>
                         
                         
                         <div class="post-content">
-                            <p>正文内容</p>
+                            
+
+<h2 id="字符处理">字符处理</h2>
+
+<p>搜索文本:grep</p>
+
+<pre><code class="language-shell"> grep [-ivnc] '需要匹配的字符' 文件名
+
+ #-i不区分大小写
+ #-c统计包含匹配的行数
+ #-n输出行号
+ #-v反向匹配
+ grep -i 'name' ./demo.txt
+
+ #使用cat命令+管道符
+ cat ./demo.txt |grep -i 'name'
+</code></pre>
+
+<p>排序：sort</p>
+
+<pre><code class="language-shell"> sort [-ntkr] 文件名
+ #-n采取数字排序
+ #-t指定分隔符
+ #-k指定第几列
+ #-r反向排序
+
+cat -t ':' -k 2 -n sort.txt
+cat sort.txt | sort -t ':' -k 2 -n
+</code></pre>
+
+<p>删除重复内容</p>
+
+<pre><code class="language-shell">uniq [-ic]
+#-i忽略大小写
+#-c计算重复行数
+
+cat uniq.txt | uniq
+
+#使用-c参数就会在每行前面打印出该行重复的次数
+cat uniq.txt | uniq -c
+</code></pre>
+
+<h2 id="例行任务">例行任务</h2>
+
+<p>单一时刻执行一次任务：at/atq/atrm</p>
+
+<pre><code class="language-shell">#30分钟后自动关机
+$ at now + 30 minutes
+at&gt; /sbin/shutdown -h now
+at&gt; &lt;EOT&gt;
+job 1 at 2012-11-06 23:39
+
+#在午夜12点实现自动关机
+$ at 00:00 2012-11-07
+at&gt; /sbin/shutdown -h now
+at&gt; &lt;EOT&gt;
+job 2 at 2012-11-07 00:00
+
+#查询at的任务
+$ atq
+1       2012-11-06 23:39 a root
+2       2012-11-07 00:00 a root
+
+#删除标号为1的任务
+$ atrm 1
+</code></pre>
+
+<p>周期性执行任务：cron</p>
+
+<p>cron服务必须时启动状态</p>
+
+<pre><code class="language-shell">service crond status
+service crond start
+</code></pre>
+
+<p>crontab -e 进入编辑模式</p>
+
+<pre><code class="language-shell">*  *  *  *  *      command
+#分钟 1～59
+#小时 0～24 
+#日期 1～31
+#月份 1～12
+#星期几 0～6
+
+#星号（*）：代表所有可能的值，例如month字段如果是星号，则表示在满足其它字段的制约条件后每月都执行该命令操作。
+#逗号（,）：可以用逗号隔开的值指定一个列表范围，例如，“1,2,5,7,8,9”
+#中杠（-）：可以用整数之间的中杠表示一个整数范围，例如“2-6”表示“2,3,4,5,6”
+#正斜线（/）：可以用正斜线指定时间的间隔频率，例如“0-23/2”表示每两小时执行一次。同时正斜线可以和星号一起使用，例如*/10，如果用在minute字段，表示每十分钟执行一次。
+</code></pre>
+
+<p>其他参数</p>
+
+<pre><code class="language-shell">crontab -l # 查看所有任务
+crontab -r # 删除所有任务
+crontab -u demo -l #root用户可以查看其他用户的任务
+</code></pre>
+
+<p>/etc/crontab的管理</p>
+
+<pre><code class="language-shell">*  *  *  *  *   user   command
+#第六列定义了以什么身份执行例行任务
+</code></pre>
+
+<h2 id="网络管理">网络管理</h2>
+
+<p>检查和配置网卡：ifconfig/ip addr</p>
+
+<pre><code class="language-shell">
+#配置IP
+ifconfig eth0 192.168.159.130 netmask 255.255.255.0
+ifconfig eth0 192.168.159.130/24 #通过IP地址和掩码系统能自行算出广播地址，也可以显式地指定广播地址
+ifconfig eth0 192.168.159.130 broadcast 192.168.159.255  netmask 255.255.255.0
+
+#关闭
+ifconfig eth0 down
+ifdown eth0
+#启用
+ifconfig eth0 up
+ifup eth0
+</code></pre>
+
+<p>将IP写入配置文件</p>
+
+<p>RedHat和CentOS系统的网络配置文件所处的目录为/etc/sysconfig/network-scripts/</p>
+
+<p>文件名 ifcfg-eth0</p>
+
+<pre><code class="language-shell">    [PCnet32 LANCE]
+    DEVICE=eth0
+    BOOTPROTO=dhcp
+    ONBOOT=yes
+
+    [PCnet32 LANCE]
+    DEVICE=eth0
+    BOOTPROTO=static
+    ONBOOT=yes
+    IPADDR=192.168.159.129
+    NETMASK=255.255.255.0
+</code></pre>
+
+<p>DNS配置</p>
+
+<pre><code class="language-shell"> #/etc/resolv.conf
+ nameserver 192.168.159.2
+ #nameserver关键字后面紧跟着一个DNS主机的IP地址，可以设置2~3个nameserver
+</code></pre>
+
+<h2 id="网络测试工具">网络测试工具</h2>
+
+<p>ping命令</p>
+
+<pre><code class="language-shell">ping [-ciw] 域名或IP
+#c  ping的次数
+#i  ping包的发送间隔
+#w  ping没有回应，在指定的时间退出
+</code></pre>
+
+<p>host命令</p>
+
+<p>查询DNS记录</p>
+
+<pre><code class="language-shell">host www.baidu.com
+www.baidu.com is an alias for www.a.shifen.com.
+www.a.shifen.com has address 111.13.100.92
+www.a.shifen.com has address 111.13.100.91
+
+host www.baidu.com 114.114.114.114 #指定DNS
+Using domain server:
+Name: 114.114.114.114
+Address: 114.114.114.114#53
+Aliases:
+
+www.baidu.com is an alias for www.a.shifen.com.
+www.a.shifen.com has address 111.13.100.92
+www.a.shifen.com has address 111.13.100.91
+</code></pre>
 
                         </div>
 
@@ -93,7 +275,15 @@
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/archives/">归档</a></li>
+        <li><a href="/post/linux_command/">Linux的常用命令--账号管理和文件管理</a></li>
+        
+        <li><a href="/post/composer_lock/">Composer.lock的作用</a></li>
+        
+        <li><a href="/post/composer_two/">Composer的常用命令</a></li>
+        
+        <li><a href="/post/composer/">Composer的安装和使用镜像加速</a></li>
+        
+        <li><a href="/post/first/">把 Hugo 博客部署到VPS</a></li>
         
     </ul>
 </div>
