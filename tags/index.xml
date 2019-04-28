@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 顺子的博客</title>
-    <link>http://www.shashun.site/tags/</link>
+    <link>http://shashun.github.io/tags/</link>
     <description>Recent content in Tags on 顺子的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 27 Apr 2019 18:07:37 +0800</lastBuildDate>
     
-	<atom:link href="http://www.shashun.site/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://shashun.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Composer</title>
-      <link>http://www.shashun.site/tags/composer/</link>
+      <link>http://shashun.github.io/tags/composer/</link>
       <pubDate>Sat, 27 Apr 2019 18:07:37 +0800</pubDate>
       
-      <guid>http://www.shashun.site/tags/composer/</guid>
+      <guid>http://shashun.github.io/tags/composer/</guid>
       <description></description>
     </item>
     

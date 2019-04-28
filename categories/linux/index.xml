@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on 顺子的博客</title>
-    <link>http://www.shashun.site/categories/linux/</link>
+    <link>http://shashun.github.io/categories/linux/</link>
     <description>Recent content in Linux on 顺子的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 28 Apr 2019 09:28:39 +0800</lastBuildDate>
     
-	<atom:link href="http://www.shashun.site/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://shashun.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux的常用命令--sed入门</title>
-      <link>http://www.shashun.site/post/linux_command_sed/</link>
+      <link>http://shashun.github.io/post/linux_command_sed/</link>
       <pubDate>Sun, 28 Apr 2019 09:28:39 +0800</pubDate>
       
-      <guid>http://www.shashun.site/post/linux_command_sed/</guid>
+      <guid>http://shashun.github.io/post/linux_command_sed/</guid>
       <description>sed命令简介 sed全名叫stream editor，是一种流编辑器，按行来处理文本的内容 ，配合正则表达式来使用，批量修改内容会很方便
 sed命令的选项 sed [选项] [动作]
 选项的参数：</description>
@@ -24,40 +24,40 @@ sed命令的选项 sed [选项] [动作]
     
     <item>
       <title>Linux的常用命令--awk入门</title>
-      <link>http://www.shashun.site/post/linux_command_awk/</link>
+      <link>http://shashun.github.io/post/linux_command_awk/</link>
       <pubDate>Sun, 28 Apr 2019 09:28:32 +0800</pubDate>
       
-      <guid>http://www.shashun.site/post/linux_command_awk/</guid>
+      <guid>http://shashun.github.io/post/linux_command_awk/</guid>
       <description>awk基于列的文本处理工具，它的工作方式是按行读取文本并视为一条记录，每条记录以字段分割成若干字段，然后输出各字段的值。它不仅仅是工具软件，还是一种编程语言
 基本用法 # 格式 awk 动作 文件名 #打印指定域 awk &#39;{print $1, $4}&#39; demo.</description>
     </item>
     
     <item>
       <title>Linux的常用命令--进程管理</title>
-      <link>http://www.shashun.site/post/linux_command_three/</link>
+      <link>http://shashun.github.io/post/linux_command_three/</link>
       <pubDate>Sat, 27 Apr 2019 22:29:49 +0800</pubDate>
       
-      <guid>http://www.shashun.site/post/linux_command_three/</guid>
+      <guid>http://shashun.github.io/post/linux_command_three/</guid>
       <description>进程管理 ps命令 查看当前查询状态下进程瞬间的状态信息
 ps 参数 #ps常用参数: # -A 列出所有的进程，和-e有同样的效果 # -a 列出不和本终端有关的所有进程 # -w 显示加宽可以显示较多信息 # -u 显示有效使用者相关的进程 # aux 显示所有包含其他使用者的进程#使用aux参数的输出： # USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND #USER: 进程拥有者 #PID: pid #%CPU: 占用的CPU使用率 #%MEM: 占用的内存使用率 #VSZ: 占用的虚拟内存大小 #RSS: 占用的内存大小 #TTY: 运行的终端的号码 #STAT: 进程状态: #D: 不可中断 #R: 运行中 #S: 休眠 #T: 暂停 #Z: 僵尸进程 #W: 没有足够的内存可分配 #&amp;lt;: 高优先级的行程 #N: 低优先级的行程 #START: 进程开始时间 #TIME: 累计使用CPU的时间 #COMMAND:执行的命令  top命令 及时动态地查看进程的信息 第一行： top命令刷新时间、系统已启动时间、当前登录用户数、系统负载（1分钟，5分钟，15分钟的平均负载）</description>
     </item>
     
     <item>
       <title>Linux的常用命令--字符处理、例行任务和网络管理与测试</title>
-      <link>http://www.shashun.site/post/linux_command_two/</link>
+      <link>http://shashun.github.io/post/linux_command_two/</link>
       <pubDate>Sat, 27 Apr 2019 21:23:59 +0800</pubDate>
       
-      <guid>http://www.shashun.site/post/linux_command_two/</guid>
+      <guid>http://shashun.github.io/post/linux_command_two/</guid>
       <description>字符处理 搜索文本:grep
 grep [-ivnc] &#39;需要匹配的字符&#39; 文件名 #-i不区分大小写 #-c统计包含匹配的行数 #-n输出行号 #-v反向匹配 grep -i &#39;name&#39; .</description>
     </item>
     
     <item>
       <title>Linux的常用命令--账号管理和文件管理</title>
-      <link>http://www.shashun.site/post/linux_command/</link>
+      <link>http://shashun.github.io/post/linux_command/</link>
       <pubDate>Sat, 27 Apr 2019 18:23:43 +0800</pubDate>
       
-      <guid>http://www.shashun.site/post/linux_command/</guid>
+      <guid>http://shashun.github.io/post/linux_command/</guid>
       <description>1.账号管理 新增用户： useradd
 $ useradd demo $ useradd -g demo demo #指定用户组  修改密码：passwd</description>
     </item>

@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 顺子的博客</title>
-    <link>http://www.shashun.site/categories/</link>
+    <link>http://shashun.github.io/categories/</link>
     <description>Recent content in Categories on 顺子的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-	<atom:link href="http://www.shashun.site/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://shashun.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo</title>
-      <link>http://www.shashun.site/categories/hugo/</link>
+      <link>http://shashun.github.io/categories/hugo/</link>
       <pubDate>Sun, 17 Mar 2019 22:59:37 +0800</pubDate>
       
-      <guid>http://www.shashun.site/categories/hugo/</guid>
+      <guid>http://shashun.github.io/categories/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>http://www.shashun.site/categories/linux/</link>
+      <link>http://shashun.github.io/categories/linux/</link>
       <pubDate>Sun, 28 Apr 2019 09:28:39 +0800</pubDate>
       
-      <guid>http://www.shashun.site/categories/linux/</guid>
+      <guid>http://shashun.github.io/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PHP</title>
-      <link>http://www.shashun.site/categories/php/</link>
+      <link>http://shashun.github.io/categories/php/</link>
       <pubDate>Sat, 27 Apr 2019 18:07:37 +0800</pubDate>
       
-      <guid>http://www.shashun.site/categories/php/</guid>
+      <guid>http://shashun.github.io/categories/php/</guid>
       <description></description>
     </item>
     

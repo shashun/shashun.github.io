@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PHP on 顺子的博客</title>
-    <link>http://www.shashun.site/categories/php/</link>
+    <link>http://shashun.github.io/categories/php/</link>
     <description>Recent content in PHP on 顺子的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 27 Apr 2019 18:07:37 +0800</lastBuildDate>
     
-	<atom:link href="http://www.shashun.site/categories/php/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://shashun.github.io/categories/php/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Composer.lock的作用</title>
-      <link>http://www.shashun.site/post/composer_lock/</link>
+      <link>http://shashun.github.io/post/composer_lock/</link>
       <pubDate>Sat, 27 Apr 2019 18:07:37 +0800</pubDate>
       
-      <guid>http://www.shashun.site/post/composer_lock/</guid>
+      <guid>http://shashun.github.io/post/composer_lock/</guid>
       <description>作用 运行composer install 的时候composer将会去读取composer.lock文件，如果composer.lock不存在或者没有内容，那么在执行时读取composer.json，获取依赖的包,并将最新版本的文件下载到vendor目录中,同时更新composer.lock文件，否则将根据composer.lock去下载更新所有依赖
 建议 在用git部署项目的时候建议composer.lock提交包git上，原因是它会导致任何设置项目的人都使用完全相同的依赖项，即使单独开发，在重新安装项目六个月后，即使项目的依赖关系从那以后发布了许多新版本，也可以确信已安装的依赖项仍然可以工作。也就是说将composer.lock提交到git上可以在不同机器上部署这个项目所安装的依赖是完全相同的，因为都是根据composer.lock文件去更新。
 注意 composer.lock文件会阻止自动获取最新版本的依赖项，如要更新到最新版，请使用composer update命令</description>
@@ -24,19 +24,19 @@
     
     <item>
       <title>Composer的常用命令</title>
-      <link>http://www.shashun.site/post/composer_two/</link>
+      <link>http://shashun.github.io/post/composer_two/</link>
       <pubDate>Sat, 27 Apr 2019 17:30:40 +0800</pubDate>
       
-      <guid>http://www.shashun.site/post/composer_two/</guid>
+      <guid>http://shashun.github.io/post/composer_two/</guid>
       <description>init（初始化） 该命令用于创建 composer.json 文件，并进行基础信息配置 可以配置Package name、Description、Author、Minimum、Package Type、License、dependencies 及 dev dependencies 信息。</description>
     </item>
     
     <item>
       <title>Composer的安装和使用镜像加速</title>
-      <link>http://www.shashun.site/post/composer/</link>
+      <link>http://shashun.github.io/post/composer/</link>
       <pubDate>Fri, 26 Apr 2019 14:05:48 +0800</pubDate>
       
-      <guid>http://www.shashun.site/post/composer/</guid>
+      <guid>http://shashun.github.io/post/composer/</guid>
       <description>一、 安装 在Windows下安装 1，下载 composer-Setup.exe 2. 运行composer-Setup.exe，点next，选择php.exe的安装路径，安装 3. 打开cmd,直接输入composer:如下表示安装成功 在Linux/Mac下安装 php -r &amp;quot;copy(&#39;https://getcomposer.</description>
     </item>
     
